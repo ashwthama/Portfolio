@@ -1,5 +1,19 @@
-<app-header></app-header>
-<app-home></app-home>
-<app-about></app-about>
-<app-footer></app-footer>
+<div class="scroll-container" (window:scroll)="onScroll($event)">
+  <!-- First Component -->
+  <div
+    class="section section-one"
+    [ngStyle]="{ opacity: firstComponentOpacity }"
+  >
+    <app-header></app-header>
+    <app-home class="fix-display"></app-home>
+  </div>
 
+  <!-- Second Component -->
+  <div
+    class="section section-two"
+    [ngClass]="{ visible: secondComponentVisible }"
+  >
+    <app-about></app-about>
+    <app-footer></app-footer>
+  </div>
+</div>
