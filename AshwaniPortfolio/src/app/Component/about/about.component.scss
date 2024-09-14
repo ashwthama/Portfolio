@@ -1,0 +1,17 @@
+.display-flex{
+    display: flex;
+    max-width: 100%;
+    min-width: 100%;
+    justify-content: space-evenly;
+    padding-top: 8%;
+}
+.p-equal{
+    width: 30%;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.p-equal:hover{
+    transform: translateY(-5px) scale(1.1); 
+    color: #212121 ;
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+  } 

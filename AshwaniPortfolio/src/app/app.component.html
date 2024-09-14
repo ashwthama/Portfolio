@@ -1,19 +1,23 @@
 <div class="scroll-container" (window:scroll)="onScroll($event)">
-  <!-- First Component -->
-  <div
-    class="section section-one"
-    [ngStyle]="{ opacity: firstComponentOpacity }"
-  >
-    <app-header></app-header>
+  <div class="section section-one" [ngStyle]="{ opacity: firstComponentOpacity }">
+    <div class="header-position">
+      <app-header></app-header>
+    </div>
     <app-home class="fix-display"></app-home>
   </div>
 
-  <!-- Second Component -->
-  <div
-    class="section section-two"
-    [ngClass]="{ visible: secondComponentVisible }"
-  >
+  <div class="section section-two" [ngClass]="{ visible: secondComponentVisible }">
     <app-about></app-about>
-    <app-footer></app-footer>
   </div>
-</div>
+  <div class="section section-three" [ngClass]="{ visible: thirdComponentVisible }">
+    <app-contact-me></app-contact-me>
+  </div>
+</div>  
+<!-- <div class="container" (mousemove)="onMouseMove($event)">
+  <img
+    src="https://png.pngtree.com/png-clipart/20230927/original/pngtree-modern-rocket-ship-object-sticker-png-image_13139788.png"
+    class="moving-image"
+    [ngStyle]="{'top.px': position.y, 'left.px': position.x}"
+  />
+</div> -->
+

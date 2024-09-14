@@ -7,8 +7,15 @@ import { Component, HostListener } from '@angular/core';
 })
 export class AppComponent {
   title = 'AshwaniPortfolio';
-  firstComponentOpacity: number = 1; // Starts fully visible
-  secondComponentVisible: boolean = false; // Initially hidden
+  firstComponentOpacity: number = 500; 
+  secondComponentVisible: boolean = false; 
+  thirdComponentVisible: boolean = false; 
+  // position = { x: 0, y: 0 };
+
+  // onMouseMove(event: MouseEvent): void {
+  //   this.position.x = event.clientX - 50; 
+  //   this.position.y = event.clientY - 50; 
+  // }
 
   @HostListener('window:scroll', ['$event'])
   onScroll(event: Event) {
@@ -20,11 +27,18 @@ export class AppComponent {
       this.firstComponentOpacity = 1 - scrollPosition / windowHeight;
     }
 
-    // Make second component visible after a certain scroll threshold
-    if (scrollPosition > windowHeight / 2) {
+    // Make second component visible after the first component fades out
+    if (scrollPosition > windowHeight / 2 && scrollPosition < windowHeight * 1.5) {
       this.secondComponentVisible = true;
     } else {
       this.secondComponentVisible = false;
+    }
+
+    // Make the third component visible after scrolling past the second component
+    if (scrollPosition > windowHeight * 1.5) {
+      this.thirdComponentVisible = true;
+    } else {
+      this.thirdComponentVisible = false;
     }
   }
 
