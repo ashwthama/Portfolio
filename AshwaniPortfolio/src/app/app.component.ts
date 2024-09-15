@@ -22,19 +22,16 @@ export class AppComponent {
     const scrollPosition = window.scrollY || document.documentElement.scrollTop;
     const windowHeight = window.innerHeight;
 
-    // Fade out the first component
     if (scrollPosition < windowHeight) {
       this.firstComponentOpacity = 1 - scrollPosition / windowHeight;
     }
 
-    // Make second component visible after the first component fades out
     if (scrollPosition > windowHeight / 2 && scrollPosition < windowHeight * 1.5) {
       this.secondComponentVisible = true;
     } else {
       this.secondComponentVisible = false;
     }
 
-    // Make the third component visible after scrolling past the second component
     if (scrollPosition > windowHeight * 1.5) {
       this.thirdComponentVisible = true;
     } else {

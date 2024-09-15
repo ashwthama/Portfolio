@@ -1,0 +1,12 @@
+<!-- src/app/portfolio/portfolio.component.html -->
+<div class="portfolio">
+    <h2>Technologies I Work With</h2>
+    <div class="technology-grid">
+      <div class="technology-card" *ngFor="let tech of technologies">
+        <img [src]="tech.imageUrl" [alt]="tech.name" class="tech-image">
+        <h3>{{ tech.name }}</h3>
+        <p>Experience: {{ tech.experience }} years</p>
+      </div>
+    </div>
+  </div>
+  
